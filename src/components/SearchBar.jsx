@@ -12,7 +12,7 @@ const SearchBar = ({ onSearch, loading }) => {
     }
   };
 
-  const popularCities = ['Jakarta', 'Bandung', 'Surabaya', 'Tokyo', 'London'];
+  const POPULAR_CITIES = ['Jakarta', 'Bandung', 'Surabaya', 'Tokyo', 'London'];
 
   return (
     <div className="space-y-3">
