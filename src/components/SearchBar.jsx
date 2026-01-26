@@ -36,8 +36,7 @@ const SearchBar = ({ onSearch, loading, recentSearches = [], onClearRecent }) =>
     e.stopPropagation();
     onClearRecent?.();
   };
-
-  // Auto focus effect
+  
   useEffect(() => {
     if (isFocused && inputRef.current) {
       inputRef.current.focus();
@@ -183,8 +182,6 @@ const SearchBar = ({ onSearch, loading, recentSearches = [], onClearRecent }) =>
           </div>
         </div>
       )}
-
-      {/* Quick Access Chips */}
       {!isFocused && (
         <div className="mt-4 flex flex-wrap gap-2 justify-center animate-fadeIn">
           {popularCities.slice(0, 4).map((city) => (
