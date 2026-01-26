@@ -16,7 +16,7 @@ const CurrentWeather = ({ data, unit }) => {
         </h2>
       </div>
 
-      {/* Main Weather Info */}
+      {/* Weather Info */}
       <div className="flex items-center justify-between mb-8">
         <div>
           <div className="flex items-baseline">
