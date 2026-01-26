@@ -83,7 +83,7 @@ const Header = ({ currentLocation = "Current location", onLocationClick, onSetti
               </div>
             </div>
 
-            {/* Time & Date - Desktop */}
+            {/* Time & Date */}
             <div className="hidden lg:flex items-center space-x-8">
               <div className="text-right">
                 <div className="flex items-center justify-end mb-1">
@@ -120,7 +120,7 @@ const Header = ({ currentLocation = "Current location", onLocationClick, onSetti
               </div>
             </div>
 
-            {/* Time Only - Mobile */}
+            {/* Time Only*/}
             <div className="flex items-center space-x-3 lg:hidden">
               <div className={`p-1.5 rounded-lg ${isDaytime ? 'bg-amber-100 dark:bg-amber-900/30' : 'bg-indigo-100 dark:bg-indigo-900/30'}`}>
                 {isDaytime ? (
@@ -142,23 +142,19 @@ const Header = ({ currentLocation = "Current location", onLocationClick, onSetti
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu*/}
       <div className={`fixed inset-0 z-40 lg:hidden transition-all duration-300 ${
         isMenuOpen ? 'visible' : 'invisible'
       }`}>
-        {/* Backdrop */}
         <div 
           className={`absolute inset-0 bg-black transition-opacity duration-300 ${
             isMenuOpen ? 'opacity-30' : 'opacity-0'
           }`}
           onClick={() => setIsMenuOpen(false)}
         />
-        
-        {/* Menu Panel */}
         <div className={`absolute top-16 left-0 right-0 bg-white dark:bg-gray-900 shadow-xl border-t border-gray-200 dark:border-gray-800 transform transition-transform duration-300 ${
           isMenuOpen ? 'translate-y-0' : '-translate-y-full'
         }`}>
-          {/* Current Info */}
           <div className="p-4 border-b border-gray-100 dark:border-gray-800">
             <div className="flex items-center justify-between mb-3">
               <div>
