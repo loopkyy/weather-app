@@ -50,7 +50,7 @@ const Forecast = ({ data, unit }) => {
         </div>
       </div>
 
-      {/* Day selector - Horizontal Tabs */}
+      {/* Day selector*/}
       <div className="flex mb-8 border-b border-gray-200 dark:border-gray-700">
         {dailyForecasts.map((day, index) => (
           <button
