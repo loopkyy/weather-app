@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-// API Key dari environment variable
+// API Key 
 const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 const BASE_URL = 'https://api.openweathermap.org/data/2.5';
 
-// Data mock untuk fallback
+// Data mock 
 const mockWeatherData = {
   "coord": { "lon": 106.8451, "lat": -6.2146 },
   "weather": [{ "id": 801, "main": "Clouds", "description": "berawan", "icon": "02d" }],
@@ -67,7 +67,6 @@ const mockForecastData = [
 export const getWeatherData = async (city, units = 'metric') => {
   console.log('Mengambil data cuaca untuk:', city, 'dengan API key:', API_KEY ? 'Ada' : 'Tidak ada');
   
-  // Coba pakai API asli dulu
   if (API_KEY && API_KEY !== 'demo_key' && !API_KEY.includes('example')) {
     try {
       console.log('Menggunakan API OpenWeatherMap...');
@@ -78,13 +77,12 @@ export const getWeatherData = async (city, units = 'metric') => {
           units: units,
           lang: 'id'
         },
-        timeout: 5000 // timeout 5 detik
+        timeout: 5000 
       });
       console.log('Data diterima dari API:', response.data.name);
       return response.data;
     } catch (error) {
       console.warn('API Error, fallback ke data mock:', error.message);
-      // Lanjut ke data mock
     }
   }
   
@@ -131,12 +129,7 @@ export const getWeatherData = async (city, units = 'metric') => {
 
 export const getForecastData = async (city, units = 'metric') => {
   console.log('Mengambil forecast untuk:', city);
-  
-  // Untuk forecast, OpenWeatherMap butuh endpoint khusus (biasanya butuh subscription)
-  // Kita pakai mock data saja dulu
   await new Promise(resolve => setTimeout(resolve, 300));
-  
-  // Generate forecast mock data
   const forecasts = [];
   for (let i = 1; i <= 5; i++) {
     const baseTemp = 28 + Math.floor(Math.random() * 5);
