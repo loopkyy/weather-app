@@ -1,5 +1,3 @@
-// utils/weatherUtils.js - VERSI TANPA JSX
-
 export const getWeatherIcon = (iconCode, condition = '') => {
   const cond = (condition || '').toLowerCase();
   
@@ -171,6 +169,3 @@ export const getWeatherAdvice = (weatherData) => {
   
   return advice.length > 0 ? advice : ['🌤️ Cuaca baik, nikmati hari Anda!'];
 };
-
-// HAPUS WeatherIconComponent karena mengandung JSX
-// export const WeatherIconComponent = ({ iconCode, condition, size = 'text-4xl' }) => { ... }
